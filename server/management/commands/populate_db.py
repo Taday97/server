@@ -4,6 +4,7 @@ from server.models import Product
 from server.models import SubCategory  
 from server.models import SubProduct  
 
+# Method to populate the database with JSON files.
 class Command(BaseCommand):
     help = 'Populate the database from a JSON file'
 

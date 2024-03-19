@@ -1,6 +1,8 @@
 from django.db.models import fields
 from rest_framework import serializers
 from server.models import SelectData, Product,SubCategory,SubProduct  
+
+# Serializer for creating instances of SelectData.
 class SelectDataCreateSerializer(serializers.ModelSerializer):
     product = serializers.PrimaryKeyRelatedField(queryset=Product.objects.all(), many=True)
     subCategory = serializers.PrimaryKeyRelatedField(queryset=SubCategory.objects.all(), many=True)
@@ -26,7 +28,8 @@ class SelectDataCreateSerializer(serializers.ModelSerializer):
         instance.subProducts.set(validated_data.get('subProducts', instance.subProducts.all()))
         instance.save()
         return instance
-      
+    
+# Serializer for displaying instances of SelectData.      
 class SelectDataSerializer(serializers.ModelSerializer):
     product = serializers.SerializerMethodField()
     subCategory = serializers.SerializerMethodField()

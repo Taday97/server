@@ -1,16 +1,17 @@
-from django.http import JsonResponse
 from server.models import SubCategory   
 from server.models import Product   
 from server.serializers.subcategoriesSerializer import SubCategoriesSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
-
+ 
+ # GET method to retrieve all SubCategory
 class GetAll(APIView):
     def get(self,request):
         detailsObj=SubCategory.objects.all()
         dlSerializeObj=SubCategoriesSerializer(detailsObj, many=True)
         return Response(dlSerializeObj.data)
-
+    
+ # GET method to retrieve SubProducts by Product Id
 class GetByProductId(APIView):
     def get(self,request,productId):
        try:
@@ -23,7 +24,8 @@ class GetByProductId(APIView):
        
        serializeobj=SubCategoriesSerializer(detailsObj,many=True)
        return Response(serializeobj.data)
-
+    
+# FilterByName method filters Subcategories by their name based on the 'name' query parameter.
 class FilterByName(APIView):
     def get(self, request):
         # Get the value of the 'name' parameter from query params

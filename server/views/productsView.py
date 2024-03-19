@@ -1,9 +1,9 @@
-from django.http import JsonResponse
 from server.models import Product   
 from server.serializers.productsSerializer import ProductsSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
-
+ 
+ # GET method to retrieve all Products
 class GetAll(APIView):
     def get(self,request):
         detailsObj=Product.objects.all()
@@ -16,6 +16,7 @@ class GetAll(APIView):
             return Response(200)
         return Response(serializeobj.errors)
 
+# FilterByName method filters Products by their name based on the 'name' query parameter.
 class FilterByName(APIView):
     def get(self, request):
         # Get the value of the 'name' parameter from query params

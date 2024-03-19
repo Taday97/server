@@ -26,20 +26,20 @@ urlpatterns = [
 
     # Routes for'Products'
     path('products', productsView.GetAll.as_view()),
-    path('products/filter/', productsView.FilterByName.as_view()),
+    path('products/filter/', productsView.FilterByName.as_view()),#subproducts/filter/?name=
     
     # Routes for'Subcategories'
     path('subcategories', subcategoriesView.GetAll.as_view()),
     path('productId/<int:productId>/subcategories', subcategoriesView.GetByProductId.as_view()),
-    path('subcategories/filter/', subcategoriesView.FilterByName.as_view()),
+    path('subcategories/filter/', subcategoriesView.FilterByName.as_view()),#subproducts/filter/?name=
 
     # Routes for'SubProducts'
     path('subproducts', subproductsView.GetAll.as_view()),
     path('subcategorieId/<int:subcategorieId>/subproducts', subproductsView.GetBySubCategorieId.as_view()),
-    path('subproducts/filter/',subproductsView.FilterByName.as_view()),
-    path('subproducts/create/',subproductsView.Create.as_view()),
+    path('subproducts/filter/',subproductsView.FilterByName.as_view()),#subproducts/filter/?name=
+    path('subproducts/create/',subproductsView.Create.as_view()),#Create Subproduct By Body {"subCategory": 1,"subProductName": "Age11","subProductId":0}
 
     # Routes for'SelectData'
     path('selectdata', selectdataView.GetAll.as_view()),
-    path('selectdata/create/',selectdataView.Create.as_view()),
+    path('selectdata/create/',selectdataView.Create.as_view()),#Create Select Data By Body {"product": [1],"subCategory": [3],"subProducts": [1, 4]}
 ]

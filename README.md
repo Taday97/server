@@ -42,7 +42,7 @@ This is a Django project implementing a RESTful API for managing products, subca
 ## Installation
 
 # 1. Clone the repository
-git clone https://github.com/Taday97/my-django-project.git
+git clone https://github.com/Taday97/server.git
 
 # 2. Navigate into the project directory
 cd my-django-project

@@ -41,10 +41,27 @@ This is a Django project implementing a RESTful API for managing products, subca
 
 ## Installation
 
-### 1. Clone the repository
-
-```bash
+# 1. Clone the repository
 git clone https://github.com/Taday97/my-django-project.git
+
+# 2. Navigate into the project directory
 cd my-django-project
+
+# 3. Create and activate a virtual environment (optional but recommended)
+# On Unix/macOS:
+python3 -m venv env
+source env/bin/activate
+
+# On Windows:
+python -m venv env
+env\Scripts\activate
+
+# 4. Install the required dependencies
 pip install -r requirements.txt
+
+# 5. Run database migrations (this sets up the database)
+python manage.py migrate
+
+# 6. Run the development server
 python manage.py runserver
+

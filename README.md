@@ -46,3 +46,5 @@ This is a Django project implementing a RESTful API for managing products, subca
 ```bash
 git clone https://github.com/Taday97/my-django-project.git
 cd my-django-project
+pip install -r requirements.txt
+python manage.py runserver
